@@ -17,7 +17,7 @@ io.on('connection',(socket)=>{
     });
     socket.on('createMessage',(message,callback)=>{
        io.emit('newMessage',generateMessage(message.from,message.text));
-       callback('This is from the server');
+       callback();
     });
     socket.emit('newMessage',generateMessage('Admin','Welcome to the Chat App!'));
     socket.broadcast.emit('newMessage',generateMessage('Admin','A new user has joined'))
@@ -27,5 +27,4 @@ io.on('connection',(socket)=>{
 });
 server.listen(port,()=>{
 console.log(`Server is listening on port ${port}`);
-console.log(generateMessage);
 });
