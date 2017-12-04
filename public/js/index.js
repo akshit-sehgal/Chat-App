@@ -9,3 +9,10 @@ socket.on('disconnect',function(){
 socket.on('newMessage',function(message){
     console.log('New Message',message);
 });
+
+socket.emit('createMessage',{
+    from:'Akii',
+    text:'hello'
+},function(msg){
+    console.log('Response: '+msg);
+});
