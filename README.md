@@ -1,1 +1,1 @@
-A simple chat app using NodeJS and Socket.io.
+A multi room chat app using NodeJS, Socket.io and mustache.js.
