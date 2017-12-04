@@ -15,13 +15,12 @@ io.on('connection',(socket)=>{
     socket.on('disconnect',()=>{
         console.log('A user was disconnected');
     });
-    socket.emit('newMessage',{
-        from:'Blah',
-        text:'How are you?',
-        createdAt:123
-    });
     socket.on('createMessage',(message)=>{
-        console.log('Create Message',message);
+       io.emit('newMessage',{
+           from:message.from,
+           text:message.text,
+           createdAt:new Date().getTime()
+       })
     })
 });
 server.listen(port,()=>{
