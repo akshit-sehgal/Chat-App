@@ -8,7 +8,7 @@ const port=process.env.PORT||3000;
 const app=express();
 const server = http.createServer(app);
 const io=socketIO(server);
-
+const {generateMessage}=require('./utils/message');
 app.use(express.static(publicPath));
 io.on('connection',(socket)=>{
     console.log('New user connected');
@@ -16,23 +16,12 @@ io.on('connection',(socket)=>{
         console.log('A user was disconnected');
     });
     socket.on('createMessage',(message)=>{
-       io.emit('newMessage',{
-           from:message.from,
-           text:message.text,
-           createdAt:new Date().getTime()
-       });
+       io.emit('newMessage',generateMessage(message.from,message.text));
     });
-    socket.emit('newMessage',{
-        from:'Admin',
-        text:'Welcome to chat app',
-        createdAt:new Date().getTime()
-    });
-    socket.broadcast.emit('newMessage',{
-        from:'Admin',
-        text:'New user has joined',
-        createdAt:new Date().getTime()
-    })
+    socket.emit('newMessage',generateMessage('Admin','Welcome to the Chat App!'));
+    socket.broadcast.emit('newMessage',generateMessage('Admin','A new user has joined'))
 });
 server.listen(port,()=>{
 console.log(`Server is listening on port ${port}`);
+console.log(generateMessage);
 });
