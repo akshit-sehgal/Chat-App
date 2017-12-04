@@ -9,6 +9,7 @@ const app=express();
 const server = http.createServer(app);
 const io=socketIO(server);
 const {generateMessage, generateLocationMessage}=require('./utils/message');
+const {isRealString}=require('./utils/validation');
 app.use(express.static(publicPath));
 io.on('connection',(socket)=>{
     console.log('New user connected');
@@ -23,7 +24,12 @@ io.on('connection',(socket)=>{
     socket.broadcast.emit('newMessage',generateMessage('Admin','A new user has joined'))
     socket.on('createLocationMessage',(coords)=>{
         io.emit('newLocationMessage',generateLocationMessage('Admin',coords.latitude,coords.longitude));
-    })
+    });
+    socket.on('join',(params,callback)=>{
+        if(!isRealString(params.name)||!isRealString(params.room))
+        callback('Name & Room Name are required.')
+        callback();
+    });
 });
 server.listen(port,()=>{
 console.log(`Server is listening on port ${port}`);
