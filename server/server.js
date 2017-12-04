@@ -14,6 +14,14 @@ io.on('connection',(socket)=>{
     console.log('New user connected');
     socket.on('disconnect',()=>{
         console.log('A user was disconnected');
+    });
+    socket.emit('newMessage',{
+        from:'Blah',
+        text:'How are you?',
+        createdAt:123
+    });
+    socket.on('createMessage',(message)=>{
+        console.log('Create Message',message);
     })
 });
 server.listen(port,()=>{
