@@ -18,7 +18,7 @@ socket.on('connect',function(){
             alert(err);
         }
         else{
-            
+            $('#roomName').html(params.room);
         }
     });
     
@@ -65,7 +65,6 @@ jQuery('#messageForm').on('submit',function(e){
     e.preventDefault();
     let messageTextbox=$('[name=message]');
     socket.emit('createMessage',{
-        from:'User',
         text:messageTextbox.val()
     },function(msg){
         messageTextbox.val('');
