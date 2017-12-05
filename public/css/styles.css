@@ -19,7 +19,7 @@
   
   button {
     border: none;
-    background: #265f82;
+    background: #00695C;
     color: white;
     cursor: pointer;
     padding: 10px;
@@ -28,14 +28,14 @@
   
   button:hover {
     border: none;
-    background: #1F4C69;
+    background: #004D40;
     color: white;
     padding: 10px;
   }
   
   button:disabled {
     cursor: default;
-    background: #698ea5;
+    background: #009688;
   }
   
   .centered-form {
@@ -44,12 +44,11 @@
     height: 100vh;
     width: 100vw;
     justify-content: center;
-    background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
-    background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+    background: -moz-linear-gradient(125deg, #283593 50%, #00695C); /* ff3.6+ */
+    background: -webkit-linear-gradient(125deg, #283593, #00695C); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(125deg, #283593, #00695C); /* opera 11.10+ */
+    background: -ms-linear-gradient(125deg, #283593, #00695C); /* ie10+ */
+    background: linear-gradient(325deg, #283593, #00695C); /* w3c */
   }
   
   .centered-form__form {
@@ -58,7 +57,7 @@
     border-radius: 5px;
     padding: 0px 20px;
     margin: 20px;
-    width: 230px;
+    width: 250px;
   }
   
   .form-field {
@@ -78,7 +77,10 @@
     border: 1px solid #e1e1e1;
     padding: 10px;
   }
-  
+  #cc{
+    margin:40px auto 10px auto !important;
+    padding-left:45px;
+  }
   .chat {
     display: flex;
   }
@@ -87,12 +89,11 @@
     overflow-y: scroll;
     width: 260px;
     height: 100vh;
-    background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
-    background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+    background: -moz-linear-gradient(125deg, #283593 50%, #00695C); /* ff3.6+ */
+    background: -webkit-linear-gradient(125deg, #283593, #00695C); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(125deg, #283593, #00695C); /* opera 11.10+ */
+    background: -ms-linear-gradient(125deg, #283593, #00695C); /* ie10+ */
+    background: linear-gradient(325deg, #283593, #00695C); /* w3c */
   }
   
   .chat__sidebar h3 {
@@ -170,7 +171,6 @@
     font-weight: 600;
     margin-right: 10px;
   }
-  
   .message__title span {
     color: #999;
   }
